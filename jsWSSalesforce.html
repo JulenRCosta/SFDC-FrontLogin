@@ -139,7 +139,7 @@
 		function postAcc() {
 			
 			const http = new XMLHttpRequest()
-			var params = {
+			var params2 = {
 "Name":"Test"
 }
 	        http.open('POST', 'https://julen-dev.my.salesforce.com/services/data/v49.0/sobjects/account')
@@ -147,7 +147,7 @@
 			http.setRequestHeader('Authorization', 'Bearer 00D0Y0000034UPd!AQYAQIeaIrFEx77qH2uhFArEKo4XLhE1TqP8YcSqQ9Ydy3z_lIJbnKEoPcBiDzYHrQl_x_NwCjcuiJ6dqQU7WbhVAk_37jzu')
 			http.setRequestHeader('Cross-Origin', 'true')
 			http.setRequestHeader('Access-Control-Allow-Origin','*')
-	        http.send(JSON.stringify(params)) // Make sure to stringify
+	        http.send(JSON.stringify(params2)) // Make sure to stringify
 	        http.onload = function() {
 	            // Do whatever with response
 	            alert(http.responseText)
