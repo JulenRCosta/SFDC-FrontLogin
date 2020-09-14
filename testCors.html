@@ -67,11 +67,104 @@
 					    }
 			        }
 		}
+
+		function bankiaapisetAccountBearer() {
+			var params = {
+"Buzon":"TestJulen@prueba",
+"Asunto":"AsuntoTestJulen",
+"visitorID":"TestvisitorID",
+"nombre":"TestJulen9001CORS",
+"client1Lastname1":"ApellidoJulen1Test1",
+"client1Lastname2":"ApellidoJulen1Test2",
+"telefono":"555555555",
+"email":"TestemailJulen@prueba.com",
+"importe":"10",
+"cretive_id":"TestCreative_id",
+"dni":"77778892Z",
+"userAgent":"",
+"site_id":"TestSite_id",
+"clickref":"TestClickref",
+"origin":"Leads Digitales",
+"condiciones":"TestCondiciones", 
+"escliente":"",
+"site_name":"Testsite_name",
+"campaign":"TestCampaign", 
+"comunicaciones":"true",
+"accountUrsus":"1239999992",
+"leadForm":"Leads_Digitales",
+"familyLead":"Banca a Distancia - Empresas",
+"walmericId":"4452a81f736b359c677fa2c8f5fb94996a99bb78",
+"creationDate":"", 
+"partnerExpNumber":"", 
+"partnerManager":"",
+"officeCode":"",
+"client1Phone2":"",
+"client1BirthDate":"1970-01-02",
+"client1CivilStatus":"",
+"client1MunicipalityCode":"",
+"client1MunicipalityDescription":"",
+"client1ProvinceCode":"",
+"client1ProvinceDescription":"",
+"buyingPrice":"",
+"loanAmount":"",
+"operationType":"",
+"propertyUse":"",
+"postalCode":"",
+"savings":"",
+"ltvAppraisal":"",
+"ltvBuy":"",
+"interestType":"",
+"totalIncomes":"",
+"loanTerm":"",
+"indebtedness":"",
+"monthlyQuota":"",
+"municipalityCode":"",
+"municipalityDescription":"",
+"provinceCode":"",
+"provinceDescription":"",
+"nameGarantia":"",
+"typeGarantia":"",
+"use":"",
+"houseType":"",
+"holderGarantia":"",
+"city":"",
+"estimatedCost":"",
+"appraisalValue":"",
+"nameDeuda":"",
+"typeDeuda":"",
+"currentBalance":"",
+"situation":"",
+"quota":"",
+"holderDeuda":"",
+"entity":"",
+"indirectRisk":"",
+"openingDate":"",
+"contactNumber":"",
+"monhlyIncome":"",
+"paymentNumber":"",
+"contractType":""
+}
+				 	
+				  	var http = new XMLHttpRequest()
+					var params2 = {"Name":"Test"}
+			        http.open('POST', 'https://bankia--ventasdig.my.salesforce.com/services/apexrest/LeadsDigitales/')
+			        http.setRequestHeader('Content-type', 'application/json')
+					http.setRequestHeader('Authorization', 'Bearer 00D3G0000008aMZ!AR4AQHZeAXEHxLru1u.1JSKtWTf9YHPhUldmh1buiSpe2wvi2Fhi912bQ9LYc0Sa155Dqz2EZBs_6bgVRRK.gBTZocHE1PFI')
+					http.setRequestHeader('Cross-Origin', 'true')
+			        http.send(JSON.stringify(params2))
+			        http.onreadystatechange = function() {
+			            if (this.status === 201 && this.readyState == 4) {
+					        console.log(this.response)
+					        
+					    }
+			        }
+		}
 	</script>
 </head>
 <body>
 	<button onclick="login()">TestCorsLogin</button>
 	<button onclick="apisetAccount()">TestCorsInsertAccount</button>
 	<button onclick="apisetAccountBearer()">TestCorsInsertAccountBearer</button>
+	<button onclick="bankiaapisetAccountBearer()">bankiaapisetAccountBearer</button>
 </body>
 </html>
