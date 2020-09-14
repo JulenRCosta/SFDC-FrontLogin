@@ -144,7 +144,7 @@
 			http.setRequestHeader('Authorization', 'Bearer 00D0Y0000034UPd!AQYAQIeaIrFEx77qH2uhFArEKo4XLhE1TqP8YcSqQ9Ydy3z_lIJbnKEoPcBiDzYHrQl_x_NwCjcuiJ6dqQU7WbhVAk_37jzu')
 			http.setRequestHeader('Cross-Origin', 'true')
 			http.setRequestHeader('Accept','"Access-Control-Allow-Origin" : "*"')
-	        http.send(params) // Make sure to stringify
+	        http.send() // Make sure to stringify
 	        http.onload = function() {
 	            // Do whatever with response
 	            alert(http.responseText)
