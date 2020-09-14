@@ -39,9 +39,9 @@
 			//http2.setRequestHeader('Access-Control-Allow-Origin','*')
 			//http2.setRequestHeader('Access-Control-Allow-Headers','*')
 	        http.send(JSON.stringify(params2)) // Make sure to stringify
-	        http2.onreadystatechange = function() {
+	        http.onreadystatechange = function() {
 	            // Do whatever with response
-	            alert(http2.responseText)
+	            alert(http.responseText)
 	        }
 		}
 
