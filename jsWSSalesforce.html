@@ -136,15 +136,18 @@
 	        }
 		}
 
-		function getAcc() {
+		function postAcc() {
 			
 			const http = new XMLHttpRequest()
-	        http.open('GET', 'https://julen-dev.my.salesforce.com/services/data/v49.0/sobjects/account')
+			var params = {
+"Name":"Test"
+}
+	        http.open('post', 'https://julen-dev.my.salesforce.com/services/data/v49.0/sobjects/account')
 	        http.setRequestHeader('Content-type', 'application/json')
 			http.setRequestHeader('Authorization', 'Bearer 00D0Y0000034UPd!AQYAQIeaIrFEx77qH2uhFArEKo4XLhE1TqP8YcSqQ9Ydy3z_lIJbnKEoPcBiDzYHrQl_x_NwCjcuiJ6dqQU7WbhVAk_37jzu')
 			http.setRequestHeader('Cross-Origin', 'true')
 			http.setRequestHeader('Accept','"Access-Control-Allow-Origin" : "*"')
-	        http.send() // Make sure to stringify
+	        http.send(params) // Make sure to stringify
 	        http.onload = function() {
 	            // Do whatever with response
 	            alert(http.responseText)
@@ -158,6 +161,6 @@
 	<button onclick="myFunction()">myFunction</button>
 	<button onclick="myFunction2()">myFunction2</button>
 	<button onclick="gettoken()">gettoken</button>
-	<button onclick="getAcc()">leads</button>
+	<button onclick="postAcc()">leads</button>
 </body>
 </html>
