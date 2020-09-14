@@ -25,47 +25,6 @@
 			xhr.send();
 		  });
 		}
-		/*let lginPromise = new Promise((resolve, reject) => {
-
-			var xhr = new XMLHttpRequest();
-			var params = {
-		      grant_type: "password",
-		      client_id : "3MVG9HxRZv05HarRDCbMSbu0DqH.M_BA873rS54Uikz4KduKL01ag1GBMYK5UMf2.vflb4G3kmUSn244Iqdv0",
-		      client_secret : "6655933965399586796",
-		      username:"julenrcosta@dev.com",
-		      password:"JrC&7012I4EdzNLjB4dpxbtek10V9baGL"};
-			xhr.open("POST", 'https://julen-dev-ed.my.salesforce.com/services/oauth2/token?grant_type=password&client_id=3MVG9HxRZv05HarRDCbMSbu0DqH.M_BA873rS54Uikz4KduKL01ag1GBMYK5UMf2.vflb4G3kmUSn244Iqdv0&client_secret=6655933965399586796&username=julenrcosta@dev.com&password=JrC%267012I4EdzNLjB4dpxbtek10V9baGL', true);
-			xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-
-			xhr.onreadystatechange = function() { 
-			    if (this.status === 200 && this.readyState == 4) {
-			        console.log(this.response)
-			        resolve(this.response)
-			    }
-			}
-			xhr.send();
-
-		});*/
-
-		/*function login() {
-			var xhr = new XMLHttpRequest();
-			var params = {
-		      grant_type: "password",
-		      client_id : "3MVG9HxRZv05HarRDCbMSbu0DqH.M_BA873rS54Uikz4KduKL01ag1GBMYK5UMf2.vflb4G3kmUSn244Iqdv0",
-		      client_secret : "6655933965399586796",
-		      username:"julenrcosta@dev.com",
-		      password:"JrC&7012I4EdzNLjB4dpxbtek10V9baGL"};
-			xhr.open("POST", 'https://julen-dev-ed.my.salesforce.com/services/oauth2/token?grant_type=password&client_id=3MVG9HxRZv05HarRDCbMSbu0DqH.M_BA873rS54Uikz4KduKL01ag1GBMYK5UMf2.vflb4G3kmUSn244Iqdv0&client_secret=6655933965399586796&username=julenrcosta@dev.com&password=JrC%267012I4EdzNLjB4dpxbtek10V9baGL', true);
-			xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-
-			xhr.onreadystatechange = function() { 
-			    if (this.status === 200 && this.readyState == 4) {
-			        console.log(this.response)
-			        return this.response
-			    }
-			}
-			xhr.send();
-		}*/
 		
 		function apisetAccount() {
 			var responseLogin = lgn().then((res) => {
@@ -85,15 +44,31 @@
 					    }
 			        }
 				});
-
-			
 		}
-
-
+		function apisetAccountBearer() {
+			var responseLogin = lgn().then((res) => {
+				 	
+				 	var parsedresponse = JSON.parse(res);
+				  	var http = new XMLHttpRequest()
+					var params2 = {"Name":"Test"}
+			        http.open('POST', 'https://julen-dev-ed.my.salesforce.com/services/data/v49.0/sobjects/account/')
+			        http.setRequestHeader('Content-type', 'application/json')
+					http.setRequestHeader('Authorization', 'Bearer 00D0Y0000034UPd!AQYAQIeaIrFEx77qH2uhFArEKo4XLhE1TqP8YcSqQ9Ydy3z_lIJbnKEoPcBiDzYHrQl_x_NwCjcuiJ6dqQU7WbhVAk_37jzu')
+					http.setRequestHeader('Cross-Origin', 'true')
+			        http.send(JSON.stringify(params2))
+			        http.onreadystatechange = function() {
+			            if (this.status === 201 && this.readyState == 4) {
+					        console.log(this.response)
+					        
+					    }
+			        }
+				});
+		}
 	</script>
 </head>
 <body>
 	<button onclick="login()">TestCorsLogin</button>
 	<button onclick="apisetAccount()">TestCorsInsertAccount</button>
+	<button onclick="apisetAccountBearer()">TestCorsInsertAccountBearer</button>
 </body>
 </html>
