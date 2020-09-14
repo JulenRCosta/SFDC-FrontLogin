@@ -136,12 +136,10 @@
 	        }
 		}
 
-		function postAcc() {
+		function Acc() {
 			
 			const http2 = new XMLHttpRequest()
-			var params2 = {
-"Name":"Test"
-}
+			var params2 = {"Name":"Test"}
 	        http2.open('POST', 'https://julen-dev.my.salesforce.com/services/data/v49.0/sobjects/account')
 	        http2.setRequestHeader('Content-type', 'application/json')
 			http2.setRequestHeader('Authorization', 'Bearer 00D0Y0000034UPd!AQYAQIeaIrFEx77qH2uhFArEKo4XLhE1TqP8YcSqQ9Ydy3z_lIJbnKEoPcBiDzYHrQl_x_NwCjcuiJ6dqQU7WbhVAk_37jzu')
@@ -161,6 +159,7 @@
 	<button onclick="myFunction()">myFunction</button>
 	<button onclick="myFunction2()">myFunction2</button>
 	<button onclick="gettoken()">gettoken</button>
-	<button onclick="postAcc()">leads</button>
+	<button onclick="leads()">leads</button>
+	<button onclick="Acc()">Acc</button>
 </body>
 </html>
