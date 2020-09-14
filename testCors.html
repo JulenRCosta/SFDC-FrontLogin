@@ -28,10 +28,33 @@
 	        }
 		}
 
+		function cors2() {
+			var xhr = new XMLHttpRequest();
+			var params = {
+		      grant_type: "password",
+		      client_id : "3MVG9HxRZv05HarRDCbMSbu0DqH.M_BA873rS54Uikz4KduKL01ag1GBMYK5UMf2.vflb4G3kmUSn244Iqdv0",
+		      client_secret : "6655933965399586796",
+		      username:"julenrcosta@dev.com",
+		      password:"JrC&7012I4EdzNLjB4dpxbtek10V9baGL"};
+			xhr.open("POST", 'https://julen-dev-ed.my.salesforce.com/services/oauth2/token', true);
+
+			//Send the proper header information along with the request
+			xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+
+			xhr.onreadystatechange = function() { // Call a function when the state changes.
+			    if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
+			        // Request finished. Do processing here.
+			    }
+			}
+			xhr.send(params);
+		}
+		
+
 
 	</script>
 </head>
 <body>
 	<button onclick="cors()">TestCors</button>
+	<button onclick="cors2()">TestCors2</button>
 </body>
 </html>
