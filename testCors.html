@@ -18,7 +18,7 @@
 	        http2.open('POST', 'https://julen-dev-ed.my.salesforce.com/services/oauth2/token')
 	        http2.setRequestHeader('Content-type', 'application/json')
 			//http2.setRequestHeader('Authorization', 'Bearer 00D0Y0000034UPd!AQYAQIeaIrFEx77qH2uhFArEKo4XLhE1TqP8YcSqQ9Ydy3z_lIJbnKEoPcBiDzYHrQl_x_NwCjcuiJ6dqQU7WbhVAk_37jzu')
-			//http2.setRequestHeader('Cross-Origin', 'true')
+			http2.setRequestHeader('Cross-Origin', 'true')
 			//http2.setRequestHeader('Access-Control-Allow-Origin','*')
 			//http2.setRequestHeader('Access-Control-Allow-Headers','*')
 	        http2.send(JSON.stringify(params)) // Make sure to stringify
