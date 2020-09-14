@@ -145,8 +145,8 @@
 	        http2.setRequestHeader('Content-type', 'application/json')
 			http2.setRequestHeader('Authorization', 'Bearer 00D0Y0000034UPd!AQYAQIeaIrFEx77qH2uhFArEKo4XLhE1TqP8YcSqQ9Ydy3z_lIJbnKEoPcBiDzYHrQl_x_NwCjcuiJ6dqQU7WbhVAk_37jzu')
 			http2.setRequestHeader('Cross-Origin', 'true')
-			http2.setRequestHeader('Access-Control-Allow-Origin','*')
-			http2.setRequestHeader('Access-Control-Allow-Headers','*')
+			//http2.setRequestHeader('Access-Control-Allow-Origin','*')
+			//http2.setRequestHeader('Access-Control-Allow-Headers','*')
 	        http2.send(JSON.stringify(params2)) // Make sure to stringify
 	        http2.onload = function() {
 	            // Do whatever with response
