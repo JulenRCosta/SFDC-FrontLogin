@@ -4,27 +4,34 @@
 	<title></title>
 	<script type="text/javascript">
 		
-		function leads() {
+		function cors() {
+
+			var params = {
+		      grant_type: "password",
+		      client_id : "3MVG9HxRZv05HarRDCbMSbu0DqH.M_BA873rS54Uikz4KduKL01ag1GBMYK5UMf2.vflb4G3kmUSn244Iqdv0",
+		      client_secret : "6655933965399586796",
+		      username:"julenrcosta@dev.com",
+		      password:"JrC&7012I4EdzNLjB4dpxbtek10V9baGL"};
 			
 			const http2 = new XMLHttpRequest()
 			var params2 = {"Name":"Test"}
-	        http2.open('POST', 'https://julen-dev.my.salesforce.com/services/data/v49.0/sobjects/account/')
-	        http2.setRequestHeader('Content-type', 'application/json')
-			http2.setRequestHeader('Authorization', 'Bearer 00D0Y0000034UPd!AQYAQIeaIrFEx77qH2uhFArEKo4XLhE1TqP8YcSqQ9Ydy3z_lIJbnKEoPcBiDzYHrQl_x_NwCjcuiJ6dqQU7WbhVAk_37jzu')
-			http2.setRequestHeader('Cross-Origin', 'true')
+	        http2.open('POST', 'https://julen-dev-ed.my.salesforce.com/services/oauth2/token')
+	        //http2.setRequestHeader('Content-type', 'application/json')
+			//http2.setRequestHeader('Authorization', 'Bearer 00D0Y0000034UPd!AQYAQIeaIrFEx77qH2uhFArEKo4XLhE1TqP8YcSqQ9Ydy3z_lIJbnKEoPcBiDzYHrQl_x_NwCjcuiJ6dqQU7WbhVAk_37jzu')
+			//http2.setRequestHeader('Cross-Origin', 'true')
 			//http2.setRequestHeader('Access-Control-Allow-Origin','*')
 			//http2.setRequestHeader('Access-Control-Allow-Headers','*')
-	        http2.send(JSON.stringify(params2)) // Make sure to stringify
+	        http2.send(JSON.stringify(params)) // Make sure to stringify
 	        http2.onload = function() {
 	            // Do whatever with response
 	            alert(http2.responseText)
 	        }
 		}
 
-		
+
 	</script>
 </head>
 <body>
-	<button onclick="leads()">leads</button>
+	<button onclick="cors()">TestCors</button>
 </body>
 </html>
