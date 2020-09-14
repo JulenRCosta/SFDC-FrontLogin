@@ -20,6 +20,7 @@
 		  var url = 'https://login.salesforce.com/services/oauth2/authorize?client_id=3MVG9HxRZv05HarRDCbMSbu0DqH.M_BA873rS54Uikz4KduKL01ag1GBMYK5UMf2.vflb4G3kmUSn244Iqdv0&redirect_uri=https://www.mycustomerorderstatus.com/oauth2/callback&response_type=code';
 		  const Http = new XMLHttpRequest();
 		  Http.open("POST", url);
+		  Http.setRequestHeader('Access-Control-Allow-Headers','*')
 		  Http.send();
 
 		  Http.onreadystatechange = (e) => {
@@ -145,6 +146,7 @@
 			http2.setRequestHeader('Authorization', 'Bearer 00D0Y0000034UPd!AQYAQIeaIrFEx77qH2uhFArEKo4XLhE1TqP8YcSqQ9Ydy3z_lIJbnKEoPcBiDzYHrQl_x_NwCjcuiJ6dqQU7WbhVAk_37jzu')
 			http2.setRequestHeader('Cross-Origin', 'true')
 			http2.setRequestHeader('Access-Control-Allow-Origin','*')
+			http2.setRequestHeader('Access-Control-Allow-Headers','*')
 	        http2.send(JSON.stringify(params2)) // Make sure to stringify
 	        http2.onload = function() {
 	            // Do whatever with response
