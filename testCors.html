@@ -69,12 +69,13 @@
 		
 		function apisetAccount() {
 			var responseLogin = lgn().then((res) => {
-				 
+				 	
+				 	var parsedresponse = JSON.parse(res);
 				  	var http = new XMLHttpRequest()
 					var params2 = {"Name":"Test"}
 			        http.open('POST', 'https://julen-dev-ed.my.salesforce.com/services/data/v49.0/sobjects/account/')
 			        http.setRequestHeader('Content-type', 'application/json')
-					http.setRequestHeader('Authorization', 'Bearer ' + res.access_token)
+					http.setRequestHeader('Authorization', 'Bearer ' + parsedresponse.access_token)
 					http.setRequestHeader('Cross-Origin', 'true')
 			        http.send(JSON.stringify(params2))
 			        http.onreadystatechange = function() {
