@@ -12,8 +12,8 @@
 		      client_id : "3MVG9HxRZv05HarRDCbMSbu0DqH.M_BA873rS54Uikz4KduKL01ag1GBMYK5UMf2.vflb4G3kmUSn244Iqdv0",
 		      client_secret : "6655933965399586796",
 		      username:"julenrcosta@dev.com",
-		      password:"JrC&7012I4EdzNLjB4dpxbtek10V9baGL"};
-			xhr.open("POST", 'https://julen-dev-ed.my.salesforce.com/services/oauth2/token?grant_type=password&client_id=3MVG9HxRZv05HarRDCbMSbu0DqH.M_BA873rS54Uikz4KduKL01ag1GBMYK5UMf2.vflb4G3kmUSn244Iqdv0&client_secret=6655933965399586796&username=julenrcosta@dev.com&password=JrC%267012I4EdzNLjB4dpxbtek10V9baGL', true);
+		      password:"Everis01xrcl4F4jPGvOsvWC2bO8AOkvG"};
+			xhr.open("POST", 'https://julen-dev-ed.my.salesforce.com/services/oauth2/token?grant_type=password&client_id=3MVG9HxRZv05HarRDCbMSbu0DqH.M_BA873rS54Uikz4KduKL01ag1GBMYK5UMf2.vflb4G3kmUSn244Iqdv0&client_secret=6655933965399586796&username=julenrcosta@dev.com&password=Everis01xrcl4F4jPGvOsvWC2bO8AOkvG', true);
 			xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 
 			xhr.onreadystatechange = function() { 
@@ -70,8 +70,8 @@
 	</script>
 </head>
 <body>
-	<button onclick="login()">TestCorsLogin</button>
-	<button onclick="apisetAccount()">TestCorsInsertAccount</button>
-	<button onclick="apisetAccountBearer()">TestCorsInsertAccountBearer</button>
+	<button onclick="login()">Only Login</button>
+	<button onclick="apisetAccount()">Login + Post Account</button>
+	<button onclick="apisetAccountBearer()">Post Account with bearer</button>
 </body>
 </html>
