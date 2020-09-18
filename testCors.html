@@ -61,6 +61,8 @@
 					http.setRequestHeader('Cross-Origin', 'true')
 			        http.send(JSON.stringify(params2))
 			        http.onreadystatechange = function() {
+					console.log('Status' + this.status)
+					console.log('ReadyState' + this.readyState)
 			            if (this.status === 201 && this.readyState == 4) {
 					        console.log(this.response)
 					        
